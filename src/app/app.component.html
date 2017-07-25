@@ -1,0 +1,15 @@
+<div class="row columns">
+  <button (click)="login()" *ngIf="!(user | async)?.uid">Google Account</button>
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout {{name.displayName}}</button>
+
+  <input type="text" id="message" *ngIf="name" placeholder="Chat here..." (keyup.enter)="chatSend($event.target.value)" [(ngModel)]="msgVal"/>
+  <div class="chats-container">
+    <div (click)="remove(item.$key)" class="chat-container" *ngFor="let item of items | async | reverse">
+      <a href="#">{{item.name}}</a>
+      <p>{{item.message}}</p>
+    </div>
+  </div>
+  <div *ngIf="itemsLength > 1" class="remove-button-container">
+    <button class="remove-all" *ngIf="(user | async)?.uid" (click)="removeAll()">Remove all message</button>
+  </div>
+</div>

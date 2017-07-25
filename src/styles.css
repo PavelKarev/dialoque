@@ -1,0 +1,19 @@
+body {
+    background-color:#242226;
+    padding-top: 20px;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    background: #816A98;
+    color:white;
+    padding: 1.2em;
+    width:300px;
+    text-align:center;
+    font-size:1.2em;
+    margin-bottom: 30px;
+    cursor:pointer;
+}
